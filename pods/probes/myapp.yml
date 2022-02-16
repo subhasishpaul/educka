@@ -20,7 +20,7 @@ spec:
       livenessProbe:
         httpGet:
            path: /petclinic
-           port: 8080
+           port: 80
 #        exec:
 #          command: ["curl","localhost:8080","/petclinic"]
         initialDelaySeconds: 10
