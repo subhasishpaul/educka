@@ -15,12 +15,13 @@ spec:
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-          - matchExpressions:
-            - key: zone           # assign this label to node
-              operator: In
-              values:
-              - east
-              #- west we can add multiple values too
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: zone           # assign this label to node
+                operator: In
+                values:
+                - east
+                #- west we can add multiple values too
 
       containers:
       - args:
