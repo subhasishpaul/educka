@@ -14,15 +14,22 @@ spec:
     spec:
       affinity:
         nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 80
+            preference:
+              matchExpressions:
               - key: zone           # assign this label to node
                 operator: In
                 values:
                 - east
-                #- west we can add multiple values too
-
+               #- west we can add multiple values too
+          - weight: 20
+            preference:
+              matchExpressions:
+              - key: type           # assign this label to node
+                operator: In
+                values:
+                - web
       containers:
       - args:
         - sleep
