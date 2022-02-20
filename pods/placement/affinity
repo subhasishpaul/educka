@@ -26,10 +26,10 @@ spec:
           - weight: 20
             preference:
               matchExpressions:
-              - key: type           # assign this label to node
+              - key: type1           # assign this label to node
                 operator: In
                 values:
-                - web1
+                - zzz
       containers:
       - args:
         - sleep
