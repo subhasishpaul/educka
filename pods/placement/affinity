@@ -29,7 +29,7 @@ spec:
               - key: type           # assign this label to node
                 operator: In
                 values:
-                - web
+                - web1
       containers:
       - args:
         - sleep
